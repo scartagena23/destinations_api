@@ -12,7 +12,9 @@ const { generateID } = require("./services")
 let { destinations } = require("./db");
 
 //port to listen - home address
-server.listen(3000)
+server.listen(process.env.PORT || 3000, function(){
+    console.log("Server listening on PORT 3000")
+});
 
 // POST => create destinations
 // data => (name^, location^, photo, description) - ^mean required
